@@ -1,11 +1,11 @@
 console.log('JS OK')
 
 /*
--- Il programma dovrà chiedere all'utente il numero di km che vuole percorrere e l'età del passeggero.
-1- Il prezzo del biglietto è definito in base ai km (0.21 € al km)
-2- Va applicato uno sconto del 20% per i minonenni
-3- Va applicato una sconto del 40% per gli over 65
-4- L'output del prezzo finale va messo fuori in forma umana
+Il programma dovrà chiedere all'utente il numero di km che vuole percorrere e l'età del passeggero.
+Il prezzo del biglietto è definito in base ai km (0.21 € al km)
+Va applicato uno sconto del 20% per i minonenni
+Va applicato una sconto del 40% per gli over 65
+L'output del prezzo finale va messo fuori in forma umana
 */
 
 
@@ -65,13 +65,31 @@ confirmButton.addEventListener('click' , function() {
     // Calcolo sconto
     if (ageValue === 'under') {
         price *= 0.8; // 20%
-        rateName = 'Tariffa min';
+        rateName = 'Tariffa minore';
     } else if (ageValue === 'over') {
         price *= 0.6; //40%
         rateName = 'Tariffa Over 65';
     }
 
-    console.log(price, rateName)
+    console.log(price, rateName);
+
+    // Arrotondiamo il prezzo
+    price = '€' + price.toFixed(2);
+
+
+    // Carrozza e PNR
+    const coach = '9';
+    const pnr = '94587';
+
+    // Montiamo i dati nel biglietto
+    passengerNameElement.innerText = nameValue;
+    rateElement.innerText = rateName;
+    coachElement.innerText = coach;
+    pnrElement.innerText = pnr;
+    priceElement.innerText = price;
+
+    // Appare il biglietto
+    ticketSection.classList.remove('d-none');
 });
 
 
