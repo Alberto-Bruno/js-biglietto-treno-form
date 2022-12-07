@@ -40,6 +40,7 @@ const rateElement = document.getElementById('rate');
 const coachElement = document.getElementById('coach');
 const pnrElement = document.getElementById('pnr');
 const priceElement = document.getElementById('price');
+const buyButton = document.getElementById('buy-button');
 
 
 // Event Listner Button
@@ -90,6 +91,28 @@ confirmButton.addEventListener('click' , function() {
 
     // Appare il biglietto
     ticketSection.classList.remove('d-none');
+
+    // Valori di defaul
+    nameField.value = '';
+    kmsField.value = '10';
+    ageField.value = '';
 });
+
+
+// Reset
+resetButton.addEventListener('click' , function () {
+    // Valori di default
+    nameField.value = '';
+    kmsField.value = '';
+    ageField.value = '';
+
+    // Scomparsa Biglietto
+    ticketSection.classList.add('d-none');
+})
+
+// Conferma Biglietto
+buyButton.addEventListener('click' , function () {
+    alert('Ticket acquistato');
+})
 
 

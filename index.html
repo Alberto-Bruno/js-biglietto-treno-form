@@ -29,14 +29,14 @@
                     <div class="col-md-3">
                         <label for="age" class="form-label">Fascia d'età</label>
                         <select id="age" class="form-select">
-                            <option value="adult">Maggiorenne</option>
+                            <option value="" selected>Maggiorenne</option>
                             <option value="under">Minorenne</option>
                             <option value="over">Over 65</option>
                         </select>
                     </div>
                 </div>
                 <div class="col-12 p-5 text-center">
-                    <button type="submit" class="btn btn-primary m-2" id="confirm-button">Genera</button>
+                    <button type="submit" class="btn btn-success m-2" id="confirm-button">Genera</button>
                     <button type="submit" class="btn btn-secondary m-2" id="reset-button">Annulla</button>
                 </div>
             </div>
@@ -74,7 +74,7 @@
                                 </div>
                             </div>
                             <div class="d-flex justify-content-end mt-4">
-                                <button class="btn btn-success">Conferma</button>
+                                <button class="btn btn-danger" id="buy-button">Conferma</button>
                             </div>
                         </div>
                     </div>
