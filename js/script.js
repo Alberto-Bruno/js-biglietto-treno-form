@@ -49,12 +49,29 @@ confirmButton.addEventListener('click' , function() {
     const kmsValue = parseInt(kmsField.value.trim());
     const ageValue = ageField.value;
 
+    console.log(nameValue, kmsValue, ageField);
+
     // Validazione
     if (!nameValue || isNaN(kmsValue) || kmsValue < 10) {
         alert('non hai inserito i valori validi');
+        return;
     }
 
-    console.log('Altrimenti esegui il resto del codice')
+    // Calcolo del prezzo base
+    let rateName = 'Tariffa Ordinaria';
+    let price = 0.21 * kmsValue;
+
+
+    // Calcolo sconto
+    if (ageValue === 'under') {
+        price *= 0.8; // 20%
+        rateName = 'Tariffa min';
+    } else if (ageValue === 'over') {
+        price *= 0.6; //40%
+        rateName = 'Tariffa Over 65';
+    }
+
+    console.log(price, rateName)
 });
 
 
