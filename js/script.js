@@ -15,7 +15,7 @@ console.log('JS OK')
 //Dentro l'event listner (quando l'utente clicca)
 
 // 1- Recupero i volori dal form
-// TODO #2 Validazione
+// 2- Validazione
 // 3- Calcolo del prezzo in base ai kms
 // 4- Verifico sconto (e lo applico)
 // 5- Arrotondo a 2 decimali (formatto il prezzo)
@@ -25,28 +25,35 @@ console.log('JS OK')
 
 // *--------------------------------------------------
 
-// Elements
+// Form Elements
 const nameField = document.getElementById('name');
 const kmsField = document.getElementById('kms');
 const ageField = document.getElementById('age');
 const confirmButton = document.getElementById('button-confirm');
 const resetButton = document.getElementById('button-reset');
 
-// tickets element
+// Tickets Element
 
 const ticketSection = document.getElementById('ticket-section');
-const passengerName = document.getElementById('passenger-name');
-const rate = document.getElementById('rate');
-const coach = document.getElementById('coach');
-const pnr = document.getElementById('pnr');
-const price = document.getElementById('price');
+const passengerNameElement = document.getElementById('passenger-name');
+const rateElement = document.getElementById('rate');
+const coachElement = document.getElementById('coach');
+const pnrElement = document.getElementById('pnr');
+const priceElement = document.getElementById('price');
 
 
+// Event Listner Button
+confirmButton.addEventListener('click' , function() {
+    // Recupero i valori dal form
+    const nameValue = nameField.Value.trim();
+    const kmsValue = kmsField.Value.trim();
+    const ageValue = ageField.value;
 
-// Problemi
-if (isNaN (kms) || isNaN(age) || kms <= 0 || age <= 0) {
-    document.getElementById('alert').innerText = 'Caratteri non validi';
-} else {
+    // Validazione
+    if (!nameValue || isNaN(kmsValue) || kmsValue < 10) {
+        alert('non hai inserito i valori validi');
+        return;
+    }
+});
 
-}
 
