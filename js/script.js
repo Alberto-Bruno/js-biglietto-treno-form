@@ -29,8 +29,8 @@ console.log('JS OK')
 const nameField = document.getElementById('name');
 const kmsField = document.getElementById('kms');
 const ageField = document.getElementById('age');
-const confirmButton = document.getElementById('button-confirm');
-const resetButton = document.getElementById('button-reset');
+const confirmButton = document.getElementById('confirm-button');
+const resetButton = document.getElementById('reset-button');
 
 // Tickets Element
 
@@ -45,15 +45,16 @@ const priceElement = document.getElementById('price');
 // Event Listner Button
 confirmButton.addEventListener('click' , function() {
     // Recupero i valori dal form
-    const nameValue = nameField.Value.trim();
-    const kmsValue = kmsField.Value.trim();
+    const nameValue = nameField.value.trim();
+    const kmsValue = parseInt(kmsField.value.trim());
     const ageValue = ageField.value;
 
     // Validazione
     if (!nameValue || isNaN(kmsValue) || kmsValue < 10) {
         alert('non hai inserito i valori validi');
-        return;
     }
+
+    console.log('Altrimenti esegui il resto del codice')
 });
 
 
